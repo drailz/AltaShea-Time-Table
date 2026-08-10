@@ -224,6 +224,33 @@
   .kid.altair .day-box input[type="checkbox"]:checked{ background:var(--altair); border-color:var(--altair); }
   .kid.shea .day-box input[type="checkbox"]:checked{ background:var(--shea); border-color:var(--shea); }
 
+  table.log{
+    width:100%;
+    border-collapse:collapse;
+    font-size:13px;
+  }
+  table.log th{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    text-align:left;
+    padding:4px 6px;
+    border-bottom:1.3px solid var(--ink);
+  }
+  table.log td{
+    padding:6px 6px;
+    border-bottom:1px dashed var(--grid-line);
+    vertical-align:top;
+    line-height:1.35;
+  }
+  table.log td.subj{
+    font-weight:600;
+    white-space:nowrap;
+    width:64px;
+  }
+
   .note{
     font-size:12.5px;
     color:var(--ink-soft);
@@ -250,7 +277,7 @@
 
   <header>
     <h1>Altair <span class="amp">&amp;</span> Shea — School Reminders</h1>
-    <div class="meta">Week of Aug 10, 2026<br>Based on updates through Fri, Aug 7</div>
+    <div class="meta">Week of Aug 10, 2026<br>Based on updates through Mon, Aug 10</div>
   </header>
 
   <div class="deadlines">
@@ -269,7 +296,12 @@
       <div class="deadline-card">
         <div class="who">Altair · P2B · Maths</div>
         <div class="date">Wed, Aug 19</div>
-        <div class="what">Unit Test 1: Numbers to 10 — materials coming on GC</div>
+        <div class="what">Unit Test 1: "Numbers to 1000" — materials on Google Classroom</div>
+      </div>
+      <div class="deadline-card">
+        <div class="who">Shea · P6 · English</div>
+        <div class="date">Thu, Aug 13</div>
+        <div class="what">Spelling Test</div>
       </div>
     </div>
   </div>
@@ -285,7 +317,17 @@
         <div class="section-label">Ongoing reminders</div>
         <ul class="check-list">
           <li><input type="checkbox"><div><span class="tag">Chinese</span>Bring the "Big square" notebook</div></li>
+          <li><input type="checkbox"><div><span class="tag">Maths</span>Every Tuesday is Maths Mental Sum</div></li>
         </ul>
+
+        <div class="section-label">Today's classes — Mon, Aug 10</div>
+        <table class="log">
+          <tr><th>Subject</th><th>Activity / note</th></tr>
+          <tr><td class="subj">Maths</td><td>Addition, placing digits in the right place value — pupil's book pages 37–39</td></tr>
+          <tr><td class="subj">Science</td><td>Solids, liquids and gases</td></tr>
+          <tr><td class="subj">English</td><td>Verbs; Sentence and Phrase; Types of Sentence</td></tr>
+          <tr><td class="subj">Bahasa</td><td>Mempelajari Kata Kerja Berawalan (me- &amp; di-)</td></tr>
+        </table>
 
         <div class="section-label">Daily update — checked today's note?</div>
         <div class="daily-grid">
@@ -310,6 +352,16 @@
           <li><input type="checkbox"><div><span class="tag">Science</span>Read Unit 1.3 — Specialised Cells</div></li>
           <li><input type="checkbox"><div><span class="tag">English</span>Revise Monologue draft</div></li>
         </ul>
+
+        <div class="section-label">Today's classes — Mon, Aug 10</div>
+        <table class="log">
+          <tr><th>Subject</th><th>Activity / note</th></tr>
+          <tr><td class="subj">GP</td><td>Make sport more accessible — homework: present the slide next week</td></tr>
+          <tr><td class="subj">PPKN</td><td>Melanjutkan tugas diskusi</td></tr>
+          <tr><td class="subj">English</td><td>Spelling practice; Literary devices in poetry</td></tr>
+          <tr><td class="subj">Math</td><td>Order of operations</td></tr>
+          <tr><td class="subj">Bahasa</td><td>Membaca Teks Cerpen "Sahabat Tupai" dan diskusi Tema 2</td></tr>
+        </table>
 
         <div class="section-label">Daily update — checked today's note?</div>
         <div class="daily-grid">
