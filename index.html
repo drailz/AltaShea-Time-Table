@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altair &amp; Shea — School Reminders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --paper:#ffffff;
+    --grid-line:#e6e2d8;
+    --ink:#262320;
+    --ink-soft:#6b6459;
+    --altair:#1f6f78;
+    --altair-soft:#e4f0f0;
+    --shea:#7a3350;
+    --shea-soft:#f3e6ec;
+    --amber:#b9691f;
+    --amber-soft:#faedd9;
+    --line:#d8d2c4;
+  }
+
+  *{box-sizing:border-box;}
+
+  body{
+    margin:0;
+    padding:32px 20px 60px;
+    background:
+      linear-gradient(var(--grid-line) 1px, transparent 1px) 0 0 / 42px 42px,
+      linear-gradient(90deg, var(--grid-line) 1px, transparent 1px) 0 0 / 42px 42px,
+      var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  .sheet{
+    max-width:980px;
+    margin:0 auto;
+  }
+
+  header{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    border-bottom:2.5px solid var(--ink);
+    padding-bottom:14px;
+    margin-bottom:22px;
+    flex-wrap:wrap;
+    gap:10px;
+  }
+  header h1{
+    font-family:'Fraunces', serif;
+    font-weight:700;
+    font-size:30px;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  header h1 .amp{ color:var(--amber); font-style:italic; font-weight:500;}
+  .meta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    color:var(--ink-soft);
+    text-align:right;
+    line-height:1.6;
+  }
+
+  .deadlines{
+    margin-bottom:30px;
+  }
+  .deadlines h2{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.14em;
+    text-transform:uppercase;
+    color:var(--amber);
+    margin:0 0 10px;
+  }
+  .deadline-row{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
+    gap:10px;
+  }
+  .deadline-card{
+    background:var(--amber-soft);
+    border:1.5px solid var(--amber);
+    border-radius:3px;
+    padding:10px 13px;
+    position:relative;
+  }
+  .deadline-card .who{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--amber);
+    font-weight:600;
+  }
+  .deadline-card .date{
+    font-family:'Fraunces', serif;
+    font-weight:600;
+    font-size:17px;
+    margin:2px 0 3px;
+  }
+  .deadline-card .what{
+    font-size:13px;
+    color:var(--ink);
+    line-height:1.35;
+  }
+
+  .kids{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+    margin-bottom:26px;
+  }
+  @media (max-width:760px){
+    .kids{grid-template-columns:1fr;}
+  }
+
+  .kid{
+    border:1.5px solid var(--line);
+    border-radius:4px;
+    background:rgba(255,255,255,0.88);
+    overflow:hidden;
+  }
+  .kid-head{
+    padding:14px 18px;
+    display:flex;
+    align-items:baseline;
+    justify-content:space-between;
+    color:#fff;
+  }
+  .kid.altair .kid-head{ background:var(--altair); }
+  .kid.shea .kid-head{ background:var(--shea); }
+  .kid-head .name{
+    font-family:'Fraunces', serif;
+    font-size:22px;
+    font-weight:600;
+  }
+  .kid-head .cls{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    opacity:.85;
+  }
+
+  .kid-body{ padding:16px 18px 20px; }
+
+  .section-label{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10.5px;
+    letter-spacing:.1em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    margin:16px 0 8px;
+  }
+  .section-label:first-child{ margin-top:0; }
+
+  ul.check-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  ul.check-list li{
+    display:flex;
+    align-items:flex-start;
+    gap:9px;
+    padding:5px 0;
+    font-size:13.5px;
+    line-height:1.4;
+    border-bottom:1px dashed var(--grid-line);
+  }
+  ul.check-list li:last-child{ border-bottom:none; }
+  ul.check-list input[type="checkbox"]{
+    appearance:none;
+    -webkit-appearance:none;
+    width:15px;
+    height:15px;
+    min-width:15px;
+    margin-top:2px;
+    border:1.6px solid var(--ink);
+    border-radius:2px;
+    background:#fff;
+    cursor:pointer;
+  }
+  .kid.altair ul.check-list input[type="checkbox"]:checked{ background:var(--altair); border-color:var(--altair); }
+  .kid.shea ul.check-list input[type="checkbox"]:checked{ background:var(--shea); border-color:var(--shea); }
+  ul.check-list li span.tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    color:var(--ink-soft);
+    display:block;
+    margin-bottom:1px;
+  }
+
+  .daily-grid{
+    display:grid;
+    grid-template-columns:repeat(5, 1fr);
+    gap:6px;
+  }
+  .day-box{
+    border:1.3px solid var(--line);
+    border-radius:3px;
+    padding:8px 6px 10px;
+    text-align:center;
+  }
+  .day-box .d{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    color:var(--ink-soft);
+    text-transform:uppercase;
+    margin-bottom:6px;
+  }
+  .day-box input[type="checkbox"]{
+    appearance:none;-webkit-appearance:none;
+    width:20px;height:20px;
+    border:1.6px solid var(--ink);
+    border-radius:3px;
+    background:#fff;
+    cursor:pointer;
+  }
+  .kid.altair .day-box input[type="checkbox"]:checked{ background:var(--altair); border-color:var(--altair); }
+  .kid.shea .day-box input[type="checkbox"]:checked{ background:var(--shea); border-color:var(--shea); }
+
+  .note{
+    font-size:12.5px;
+    color:var(--ink-soft);
+    background:var(--altair-soft);
+    border:1px solid var(--line);
+    border-radius:4px;
+    padding:10px 14px;
+    margin-bottom:26px;
+  }
+
+  footer{
+    margin-top:26px;
+    padding-top:12px;
+    border-top:1px solid var(--line);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    color:var(--ink-soft);
+    text-align:center;
+  }
+</style>
+</head>
+<body>
+<div class="sheet">
+
+  <header>
+    <h1>Altair <span class="amp">&amp;</span> Shea — School Reminders</h1>
+    <div class="meta">Week of Aug 10, 2026<br>Based on updates through Fri, Aug 7</div>
+  </header>
+
+  <div class="deadlines">
+    <h2>⚠ Upcoming deadlines</h2>
+    <div class="deadline-row">
+      <div class="deadline-card">
+        <div class="who">Altair · P2B · Science</div>
+        <div class="date">Wed, Aug 12</div>
+        <div class="what">Unit test: "Plants are living things" — materials on Google Classroom</div>
+      </div>
+      <div class="deadline-card">
+        <div class="who">Altair · P2B · English</div>
+        <div class="date">Thu, Aug 13</div>
+        <div class="what">Spelling Test — List No. 2, posted on Google Classroom</div>
+      </div>
+      <div class="deadline-card">
+        <div class="who">Altair · P2B · Maths</div>
+        <div class="date">Wed, Aug 19</div>
+        <div class="what">Unit Test 1: Numbers to 10 — materials coming on GC</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="kids">
+
+    <div class="kid altair">
+      <div class="kid-head">
+        <span class="name">Altair</span>
+        <span class="cls">Class P2B</span>
+      </div>
+      <div class="kid-body">
+        <div class="section-label">Ongoing reminders</div>
+        <ul class="check-list">
+          <li><input type="checkbox"><div><span class="tag">Chinese</span>Bring the "Big square" notebook</div></li>
+        </ul>
+
+        <div class="section-label">Daily update — checked today's note?</div>
+        <div class="daily-grid">
+          <div class="day-box"><div class="d">Mon</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Tue</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Wed</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Thu</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Fri</div><input type="checkbox"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="kid shea">
+      <div class="kid-head">
+        <span class="name">Shea</span>
+        <span class="cls">Class P6</span>
+      </div>
+      <div class="kid-body">
+        <div class="section-label">Ongoing reminders</div>
+        <ul class="check-list">
+          <li><input type="checkbox"><div><span class="tag">Maths</span>Memorize multiplication tables of 3, 4, 5, 6</div></li>
+          <li><input type="checkbox"><div><span class="tag">Science</span>Read Unit 1.3 — Specialised Cells</div></li>
+          <li><input type="checkbox"><div><span class="tag">English</span>Revise Monologue draft</div></li>
+        </ul>
+
+        <div class="section-label">Daily update — checked today's note?</div>
+        <div class="daily-grid">
+          <div class="day-box"><div class="d">Mon</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Tue</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Wed</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Thu</div><input type="checkbox"></div>
+          <div class="day-box"><div class="d">Fri</div><input type="checkbox"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="note">Checkboxes are for on-screen use only — they reset when the page reloads and aren't shared between viewers. Reload to see the latest published version after an update.</div>
+
+  <footer>AltaShea Time Table · updated by sending new class-update photos to Claude</footer>
+
+</div>
+</body>
+</html>
