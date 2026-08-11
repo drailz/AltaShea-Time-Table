@@ -9,7 +9,7 @@ A simple shareable web page with Altair (P2B) and Shea (P6)'s school reminders a
 3. Set **Branch** to `claude/kids-timetable-previous-a5ugdm` (or `main` after this is merged) and folder to `/ (root)`.
 4. Save — GitHub will give you a URL like `https://drailz.github.io/AltaShea-Time-Table/` within a minute or two.
 
-Share that URL with your wife — it works on any phone or browser, no login needed.
+Share that URL — it works on any phone or browser, no login needed.
 
 ## Updating the schedule
 
