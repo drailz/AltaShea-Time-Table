@@ -14,3 +14,5 @@ Share that URL — it works on any phone or browser, no login needed.
 ## Updating the schedule
 
 Send new class-update photos or info to Claude, and ask it to update `index.html` in this repo. Push the change and the live page updates automatically.
+If the class-update photo is detected from Rosette, then the update is for Altair class P2B
+If the class-update photo is detected from William, then the update is for Shea class P6
