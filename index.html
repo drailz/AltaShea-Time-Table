@@ -19,6 +19,7 @@
     --shea-soft:#f3e6ec;
     --amber:#b9691f;
     --amber-soft:#faedd9;
+    --urgent:#b3261e;
     --line:#d8d2c4;
   }
 
@@ -88,11 +89,10 @@
   .filter-btn[data-filter="all"].active{ background:var(--ink); border-color:var(--ink); }
   .filter-btn[data-filter="altair"].active{ background:var(--altair); border-color:var(--altair); }
   .filter-btn[data-filter="shea"].active{ background:var(--shea); border-color:var(--shea); }
+  .day-filter-btn.active{ background:var(--amber); border-color:var(--amber); }
 
   body[data-filter="altair"] .kid.shea,
-  body[data-filter="altair"] .deadline-card[data-kid="shea"],
-  body[data-filter="shea"] .kid.altair,
-  body[data-filter="shea"] .deadline-card[data-kid="altair"]{
+  body[data-filter="shea"] .kid.altair{
     display:none;
   }
   body[data-filter="altair"] .kids,
@@ -137,10 +137,38 @@
     font-size:17px;
     margin:2px 0 3px;
   }
+  .deadline-card .rel-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    font-weight:600;
+    color:var(--ink-soft);
+    margin-left:4px;
+    vertical-align:middle;
+  }
   .deadline-card .what{
     font-size:13px;
     color:var(--ink);
     line-height:1.35;
+  }
+
+  .deadline-card[data-urgency="today"],
+  .deadline-card[data-urgency="tomorrow"]{
+    border-color:var(--urgent);
+    box-shadow:0 0 0 1px var(--urgent);
+  }
+  .deadline-card[data-urgency="today"] .date,
+  .deadline-card[data-urgency="tomorrow"] .date{
+    font-weight:700;
+  }
+  .deadline-card[data-urgency="today"] .rel-tag,
+  .deadline-card[data-urgency="tomorrow"] .rel-tag{
+    color:var(--urgent);
+  }
+  .deadline-card[data-urgency="soon"] .rel-tag{
+    color:var(--amber);
+  }
+  .deadline-card[data-urgency="past"]{
+    opacity:.55;
   }
 
   .kids{
@@ -319,42 +347,49 @@
     <button type="button" class="filter-btn" data-filter="shea">Shea</button>
   </div>
 
+  <div class="filter-bar">
+    <button type="button" class="filter-btn day-filter-btn" data-days-filter="all">All Dates</button>
+    <button type="button" class="filter-btn day-filter-btn" data-days-filter="1">Tomorrow</button>
+    <button type="button" class="filter-btn day-filter-btn" data-days-filter="2">In 2 Days</button>
+    <button type="button" class="filter-btn day-filter-btn" data-days-filter="3">In 3 Days</button>
+  </div>
+
   <div class="deadlines">
     <h2>⚠ Upcoming deadlines</h2>
     <div class="deadline-row">
-      <div class="deadline-card" data-kid="shea">
+      <div class="deadline-card" data-kid="shea" data-date="2026-08-13">
         <div class="who">Shea · P6 · Science</div>
-        <div class="date">Thu, Aug 13</div>
+        <div class="date">Thu, Aug 13 <span class="rel-tag"></span></div>
         <div class="what">Workbook pages 9–10 (No. 3a &amp; 3b) due — discussed before moving to Unit 1.4 Cells, Tissue, and Organs</div>
       </div>
-      <div class="deadline-card" data-kid="altair">
+      <div class="deadline-card" data-kid="altair" data-date="2026-08-13">
         <div class="who">Altair · P2B · English</div>
-        <div class="date">Thu, Aug 13</div>
+        <div class="date">Thu, Aug 13 <span class="rel-tag"></span></div>
         <div class="what">Spelling Test — List No. 2, posted on Google Classroom</div>
       </div>
-      <div class="deadline-card" data-kid="shea">
+      <div class="deadline-card" data-kid="shea" data-date="2026-08-13">
         <div class="who">Shea · P6 · English</div>
-        <div class="date">Thu, Aug 13</div>
+        <div class="date">Thu, Aug 13 <span class="rel-tag"></span></div>
         <div class="what">Spelling Test</div>
       </div>
-      <div class="deadline-card" data-kid="altair">
+      <div class="deadline-card" data-kid="altair" data-date="2026-08-18">
         <div class="who">Altair · P2B · Bahasa</div>
-        <div class="date">Tue, Aug 18</div>
+        <div class="date">Tue, Aug 18 <span class="rel-tag"></span></div>
         <div class="what">Unit Test Tema 1</div>
       </div>
-      <div class="deadline-card" data-kid="shea">
+      <div class="deadline-card" data-kid="shea" data-date="2026-08-18">
         <div class="who">Shea · P6 · Bahasa</div>
-        <div class="date">Tue, Aug 18</div>
+        <div class="date">Tue, Aug 18 <span class="rel-tag"></span></div>
         <div class="what">Unit Test Tema 1</div>
       </div>
-      <div class="deadline-card" data-kid="altair">
+      <div class="deadline-card" data-kid="altair" data-date="2026-08-19">
         <div class="who">Altair · P2B · Maths</div>
-        <div class="date">Wed, Aug 19</div>
+        <div class="date">Wed, Aug 19 <span class="rel-tag"></span></div>
         <div class="what">Unit Test 1: "Numbers to 1000" — materials on Google Classroom</div>
       </div>
-      <div class="deadline-card" data-kid="altair">
+      <div class="deadline-card" data-kid="altair" data-date="2026-08-19">
         <div class="who">Altair · P2B · Science</div>
-        <div class="date">Wed, Aug 19</div>
+        <div class="date">Wed, Aug 19 <span class="rel-tag"></span></div>
         <div class="what">Bring a mask — Making Gas experiment using vinegar and bicarbonate of soda</div>
       </div>
     </div>
@@ -438,13 +473,60 @@
 
 </div>
 <script>
-  var filterBtns = document.querySelectorAll('.filter-btn');
-  function setFilter(f){
-    document.body.setAttribute('data-filter', f);
-    filterBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.filter === f); });
+  var kidBtns = document.querySelectorAll('.filter-btn[data-filter]');
+  var dayBtns = document.querySelectorAll('.filter-btn[data-days-filter]');
+  var cards = document.querySelectorAll('.deadline-card[data-date]');
+  var kidFilter = 'all';
+  var dayFilter = 'all';
+
+  function computeUrgency(){
+    var now = new Date();
+    var todayMid = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    cards.forEach(function(card){
+      var target = new Date(card.dataset.date + 'T00:00:00');
+      var diff = Math.round((target - todayMid) / 86400000);
+      card.dataset.days = diff;
+      var tag = card.querySelector('.rel-tag');
+      var label = '';
+      var urgency = '';
+      if(diff < 0){ label = '(past)'; urgency = 'past'; }
+      else if(diff === 0){ label = '(today)'; urgency = 'today'; }
+      else if(diff === 1){ label = '(tomorrow)'; urgency = 'tomorrow'; }
+      else if(diff <= 3){ label = '(in ' + diff + ' days)'; urgency = 'soon'; }
+      else { label = '(in ' + diff + ' days)'; }
+      if(tag){ tag.textContent = label; }
+      if(urgency){ card.setAttribute('data-urgency', urgency); } else { card.removeAttribute('data-urgency'); }
+    });
   }
-  filterBtns.forEach(function(b){ b.addEventListener('click', function(){ setFilter(b.dataset.filter); }); });
-  setFilter('all');
+
+  function applyFilters(){
+    document.body.setAttribute('data-filter', kidFilter);
+    cards.forEach(function(card){
+      var kidOk = kidFilter === 'all' || card.dataset.kid === kidFilter;
+      var dayOk = dayFilter === 'all' || card.dataset.days === dayFilter;
+      card.style.display = (kidOk && dayOk) ? '' : 'none';
+    });
+  }
+
+  kidBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      kidFilter = b.dataset.filter;
+      kidBtns.forEach(function(x){ x.classList.toggle('active', x === b); });
+      applyFilters();
+    });
+  });
+  dayBtns.forEach(function(b){
+    b.addEventListener('click', function(){
+      dayFilter = b.dataset.daysFilter;
+      dayBtns.forEach(function(x){ x.classList.toggle('active', x === b); });
+      applyFilters();
+    });
+  });
+
+  computeUrgency();
+  kidBtns[0].classList.add('active');
+  dayBtns[0].classList.add('active');
+  applyFilters();
 </script>
 </body>
 </html>
