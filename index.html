@@ -67,6 +67,39 @@
     line-height:1.6;
   }
 
+  .filter-bar{
+    display:flex;
+    gap:8px;
+    margin-bottom:22px;
+  }
+  .filter-btn{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:11px;
+    letter-spacing:.06em;
+    text-transform:uppercase;
+    color:var(--ink-soft);
+    background:#fff;
+    border:1.5px solid var(--line);
+    border-radius:999px;
+    padding:7px 15px;
+    cursor:pointer;
+  }
+  .filter-btn.active{ color:#fff; }
+  .filter-btn[data-filter="all"].active{ background:var(--ink); border-color:var(--ink); }
+  .filter-btn[data-filter="altair"].active{ background:var(--altair); border-color:var(--altair); }
+  .filter-btn[data-filter="shea"].active{ background:var(--shea); border-color:var(--shea); }
+
+  body[data-filter="altair"] .kid.shea,
+  body[data-filter="altair"] .deadline-card[data-kid="shea"],
+  body[data-filter="shea"] .kid.altair,
+  body[data-filter="shea"] .deadline-card[data-kid="altair"]{
+    display:none;
+  }
+  body[data-filter="altair"] .kids,
+  body[data-filter="shea"] .kids{
+    grid-template-columns:1fr;
+  }
+
   .deadlines{
     margin-bottom:30px;
   }
@@ -280,40 +313,46 @@
     <div class="meta">Week of Aug 10, 2026<br>Based on updates through Wed, Aug 12</div>
   </header>
 
+  <div class="filter-bar">
+    <button type="button" class="filter-btn" data-filter="all">Both</button>
+    <button type="button" class="filter-btn" data-filter="altair">Altair</button>
+    <button type="button" class="filter-btn" data-filter="shea">Shea</button>
+  </div>
+
   <div class="deadlines">
     <h2>⚠ Upcoming deadlines</h2>
     <div class="deadline-row">
-      <div class="deadline-card">
+      <div class="deadline-card" data-kid="shea">
         <div class="who">Shea · P6 · Science</div>
         <div class="date">Thu, Aug 13</div>
         <div class="what">Workbook pages 9–10 (No. 3a &amp; 3b) due — discussed before moving to Unit 1.4 Cells, Tissue, and Organs</div>
       </div>
-      <div class="deadline-card">
+      <div class="deadline-card" data-kid="altair">
         <div class="who">Altair · P2B · English</div>
         <div class="date">Thu, Aug 13</div>
         <div class="what">Spelling Test — List No. 2, posted on Google Classroom</div>
       </div>
-      <div class="deadline-card">
+      <div class="deadline-card" data-kid="shea">
         <div class="who">Shea · P6 · English</div>
         <div class="date">Thu, Aug 13</div>
         <div class="what">Spelling Test</div>
       </div>
-      <div class="deadline-card">
+      <div class="deadline-card" data-kid="altair">
         <div class="who">Altair · P2B · Bahasa</div>
         <div class="date">Tue, Aug 18</div>
         <div class="what">Unit Test Tema 1</div>
       </div>
-      <div class="deadline-card">
+      <div class="deadline-card" data-kid="shea">
         <div class="who">Shea · P6 · Bahasa</div>
         <div class="date">Tue, Aug 18</div>
         <div class="what">Unit Test Tema 1</div>
       </div>
-      <div class="deadline-card">
+      <div class="deadline-card" data-kid="altair">
         <div class="who">Altair · P2B · Maths</div>
         <div class="date">Wed, Aug 19</div>
         <div class="what">Unit Test 1: "Numbers to 1000" — materials on Google Classroom</div>
       </div>
-      <div class="deadline-card">
+      <div class="deadline-card" data-kid="altair">
         <div class="who">Altair · P2B · Science</div>
         <div class="date">Wed, Aug 19</div>
         <div class="what">Bring a mask — Making Gas experiment using vinegar and bicarbonate of soda</div>
@@ -400,5 +439,14 @@
   <footer>AltaShea Time Table · updated by sending new class-update photos to Claude</footer>
 
 </div>
+<script>
+  var filterBtns = document.querySelectorAll('.filter-btn');
+  function setFilter(f){
+    document.body.setAttribute('data-filter', f);
+    filterBtns.forEach(function(b){ b.classList.toggle('active', b.dataset.filter === f); });
+  }
+  filterBtns.forEach(function(b){ b.addEventListener('click', function(){ setFilter(b.dataset.filter); }); });
+  setFilter('all');
+</script>
 </body>
 </html>
