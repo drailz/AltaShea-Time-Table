@@ -13,6 +13,22 @@ Share that URL — it works on any phone or browser, no login needed.
 
 ## Updating the schedule
 
-Send new class-update photos or info to Claude, and ask it to update `index.html` in this repo. Push the change and the live page updates automatically.
-If the class-update photo is detected from Rosette, then the update is for Altair class P2B
-If the class-update photo is detected from William, then the update is for Shea class P6
+Just send the class-update photo(s) to Claude — no extra instructions needed. Claude should:
+
+1. **Identify the kid from who sent the photo:**
+   - Photo from **Rosette** → **Altair**, class **P2B**
+   - Photo from **William** → **Shea**, class **P6**
+   - Both photos are often sent together for the same day — handle each independently.
+
+2. **Read the table in the photo** (columns: date, Lessons/Activities, Reminders/Homework/Offline Work) and update `index.html`:
+   - Replace that kid's **"Today's classes"** table with the subjects/activities for the new date, and update the section-label date.
+   - Any **Reminders/Homework** text (spelling lists, unit tests, things to bring, presentations) becomes either:
+     - a new card in **⚠ Upcoming deadlines** (if it has a specific future due date), or
+     - a line in that kid's **Ongoing reminders** list (if it's open-ended, e.g. "bring X every week").
+   - Remove deadline cards / ongoing reminders that are now resolved (the due date has passed, or today's update shows the test/assignment already happened).
+   - Update the header's "Based on updates through" date to the latest date covered.
+   - Leave anything not mentioned in the new photo unchanged.
+
+3. **Push straight to `main`** (no feature branch, no PR) — the live GitHub Pages site redeploys automatically within a minute or two.
+
+If a photo is unclear or missing a Reminders/Homework cell, use `-` for none rather than guessing.
