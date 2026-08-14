@@ -32,3 +32,5 @@ Just send the class-update photo(s) to Claude — no extra instructions needed. 
 3. **Push straight to `main`** (no feature branch, no PR) — the live GitHub Pages site redeploys automatically within a minute or two.
 
 If a photo is unclear or missing a Reminders/Homework cell, use `-` for none rather than guessing.
+
+**School-wide announcements** (e.g. a school-level notice/email that applies to all Primary classes, not just P2B or Shea's class): add it as a deadline card with `data-kid="all"` instead of `data-kid="altair"`/`"shea"`. These cards stay visible no matter which kid filter (Both/Altair/Shea) is selected, and get a neutral dark left-accent instead of a kid color. Use the announcement's response/consent deadline as the card's date (not the event date itself) so the urgency countdown is useful, and mention the actual event date/time/location in the card body along with any link (e.g. a consent form).

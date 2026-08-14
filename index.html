@@ -154,6 +154,11 @@
     color:var(--ink);
     line-height:1.35;
   }
+  .deadline-card .what a{
+    color:var(--amber);
+    font-weight:600;
+  }
+  .deadline-card[data-kid="all"]{ border-left:4px solid var(--ink); }
 
   .deadline-card[data-urgency="today"],
   .deadline-card[data-urgency="tomorrow"]{
@@ -361,6 +366,11 @@
   <div class="deadlines">
     <h2>⚠ Upcoming deadlines</h2>
     <div class="deadline-row">
+      <div class="deadline-card" data-kid="all" data-date="2026-08-17">
+        <div class="who">All Classes · P2B &amp; P6 · Health Screening</div>
+        <div class="date">Mon, Aug 17 <span class="rel-tag"></span></div>
+        <div class="what">Consent due for the Health Department's Health Screening for all Primary students — Wed, Aug 19, 9:00 AM onwards @ SIS Cilegon. <a href="https://forms.gle/tuUcj11guTwmFoq19" target="_blank" rel="noopener">Fill out consent form →</a></div>
+      </div>
       <div class="deadline-card" data-kid="shea" data-date="2026-08-18">
         <div class="who">Shea · P6 · English</div>
         <div class="date">Tue, Aug 18 <span class="rel-tag"></span></div>
@@ -507,7 +517,7 @@
   function applyFilters(){
     document.body.setAttribute('data-filter', kidFilter);
     cards.forEach(function(card){
-      var kidOk = kidFilter === 'all' || card.dataset.kid === kidFilter;
+      var kidOk = kidFilter === 'all' || card.dataset.kid === kidFilter || card.dataset.kid === 'all';
       var dayOk = dayFilter === 'all' || card.dataset.days === dayFilter;
       card.style.display = (kidOk && dayOk) ? '' : 'none';
     });
