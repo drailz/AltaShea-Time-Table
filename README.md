@@ -34,7 +34,7 @@ One line per subject, per kid, per day:
 |---|---|
 | `date` | `YYYY-MM-DD` |
 | `kid` | `"altair"` or `"shea"` |
-| `subject` | subject name as shown in the photo (e.g. `"Maths"`, `"Bahasa"`, `"PPKN"`) — keep spelling consistent per kid over time where possible, since it's used as a filter in the History section |
+| `subject` | subject name, **normalized to a canonical spelling regardless of how the photo's table happened to write it** — since it's used as a filter in the History section, inconsistent spelling (e.g. the school's own tables mixing "Math" and "Maths" for the same class) would silently split one subject into two filter entries. Canonical names used so far: `"Maths"` (not "Math") |
 | `activity` | the Lessons/Activities cell text, translated to English if it's in Indonesian, or left as-is if it's a proper noun / short phrase that doesn't need translating |
 
 The page always shows, per kid, the **most recent date present in this file** as "Today's classes" — you don't need to tell it which date is "current."
