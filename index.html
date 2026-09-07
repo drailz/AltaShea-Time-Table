@@ -747,8 +747,8 @@
   dayBtns[0].classList.add('active');
 
   Promise.all([
-    fetch('data/activities.jsonl').then(function(r){ return r.text(); }),
-    fetch('data/reminders.jsonl').then(function(r){ return r.text(); })
+    fetch('data/activities.jsonl?v=' + Date.now(), {cache:'no-store'}).then(function(r){ return r.text(); }),
+    fetch('data/reminders.jsonl?v=' + Date.now(), {cache:'no-store'}).then(function(r){ return r.text(); })
   ]).then(function(results){
     var activities = parseJsonl(results[0]);
     var reminderEvents = parseJsonl(results[1]);
