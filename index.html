@@ -387,11 +387,12 @@
   .hist-date:first-child{ margin-top:0; }
   .hist-row{
     display:grid;
-    grid-template-columns:64px 84px 1fr;
+    grid-template-columns:56px 72px 84px 1fr;
     gap:8px;
     font-size:13px;
     padding:4px 0;
     line-height:1.35;
+    align-items:baseline;
   }
   .hist-kid{
     font-family:'IBM Plex Mono', monospace;
@@ -402,6 +403,18 @@
   }
   .hist-row.hist-altair .hist-kid{ color:var(--altair); }
   .hist-row.hist-shea .hist-kid{ color:var(--shea); }
+  .hist-type{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:9.5px;
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    font-weight:600;
+    padding:2px 6px;
+    border-radius:999px;
+    width:fit-content;
+  }
+  .hist-type-class{ background:var(--altair-soft); color:var(--ink-soft); }
+  .hist-type-reminder{ background:var(--amber-soft); color:var(--amber); }
   .hist-subj{ font-weight:600; }
   .hist-empty{
     color:var(--ink-soft);
@@ -510,6 +523,11 @@
           <option value="all">Both kids</option>
           <option value="altair">Altair</option>
           <option value="shea">Shea</option>
+        </select>
+        <select id="historyType">
+          <option value="all">Classes &amp; reminders</option>
+          <option value="class">Classes only</option>
+          <option value="reminder">Reminders only</option>
         </select>
         <select id="historySubject">
           <option value="all">All subjects</option>
@@ -625,12 +643,12 @@
   function buildHistoryRows(activities, reminders){
     var rows = [];
     activities.forEach(function(a){
-      rows.push({date: a.date, kid: a.kid, subject: a.subject, text: a.activity});
+      rows.push({date: a.date, kid: a.kid, subject: a.subject, type: 'class', text: a.activity});
     });
     reminders.forEach(function(r){
       r.history.forEach(function(ev){
-        var text = '[' + ev.event + '] ' + r.title + (ev.note ? ' — ' + ev.note : '');
-        rows.push({date: ev.seenDate, kid: r.kid, subject: r.subject, text: text});
+        var text = capitalize(ev.event) + ': ' + r.title + (ev.note ? ' — ' + ev.note : '');
+        rows.push({date: ev.seenDate, kid: r.kid, subject: r.subject, type: 'reminder', text: text});
       });
     });
     return rows;
@@ -651,9 +669,11 @@
     var search = document.getElementById('historySearch').value.trim().toLowerCase();
     var kidSel = document.getElementById('historyKid').value;
     var subjSel = document.getElementById('historySubject').value;
+    var typeSel = document.getElementById('historyType').value;
     var rows = allHistoryRows.filter(function(r){
       if(kidSel !== 'all' && r.kid !== kidSel) return false;
       if(subjSel !== 'all' && r.subject !== subjSel) return false;
+      if(typeSel !== 'all' && r.type !== typeSel) return false;
       if(search && r.subject.toLowerCase().indexOf(search) === -1 && r.text.toLowerCase().indexOf(search) === -1) return false;
       return true;
     });
@@ -670,7 +690,7 @@
         html += '<div class="hist-date">' + formatDateLabel(r.date) + '</div>';
         lastDate = r.date;
       }
-      html += '<div class="hist-row hist-' + r.kid + '"><span class="hist-kid">' + escapeHtml(capitalize(r.kid)) + '</span><span class="hist-subj">' + escapeHtml(r.subject) + '</span><span class="hist-text">' + escapeHtml(r.text) + '</span></div>';
+      html += '<div class="hist-row hist-' + r.kid + '"><span class="hist-kid">' + escapeHtml(capitalize(r.kid)) + '</span><span class="hist-type hist-type-' + r.type + '">' + (r.type === 'class' ? 'Class' : 'Reminder') + '</span><span class="hist-subj">' + escapeHtml(r.subject) + '</span><span class="hist-text">' + escapeHtml(r.text) + '</span></div>';
     });
     out.innerHTML = html;
   }
@@ -720,6 +740,7 @@
   });
   document.getElementById('historySearch').addEventListener('input', renderHistory);
   document.getElementById('historyKid').addEventListener('change', renderHistory);
+  document.getElementById('historyType').addEventListener('change', renderHistory);
   document.getElementById('historySubject').addEventListener('change', renderHistory);
 
   kidBtns[0].classList.add('active');
