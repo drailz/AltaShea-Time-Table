@@ -89,6 +89,14 @@ If a photo is unclear or missing a Reminders/Homework cell, just don't add a rem
 
 **School-wide announcements** (e.g. a school-level notice/email that applies to all Primary classes, not just P2B or Shea's class): append a `created` event with `"kid":"all"` and `"kind":"deadline"`. These stay visible no matter which kid filter (Both/Altair/Shea) is selected, and get a neutral dark left-accent instead of a kid color.
 
+## Evaluating ongoing reminders
+
+`kind:"ongoing"` reminders (no due date) never auto-expire — they only leave the active list via an explicit `resolved`/`cancelled` event. **Don't add one of those events just because a reminder hasn't been re-mentioned in a while; only add it when a photo actually confirms it's done, cancelled, or superseded.** Silence isn't evidence — the school simply may not repeat "bring the notebook every week" in every table.
+
+To make staleness visible without guessing, each ongoing reminder on the page shows "Last mentioned `<date>`" (from its most recent event's `seenDate`), and gets a visual "check this is still current" flag once **30 days** have passed since that date. That's a nudge for a human (or a future Claude session with more context, e.g. "the school year ended") to decide, not an automatic resolution.
+
 ## Browsing history
 
-The page has a collapsible **History** section (below the two kids' cards) with a text search, a kid filter, and a subject filter. It searches across both `data/activities.jsonl` (every class ever logged) and every event in `data/reminders.jsonl` (so you can see a reminder's full timeline — created, reconfirmed, revised, resolved). Nothing needs to be manually curated for this; it's generated straight from the same two data files described above.
+The page has a collapsible **History** section (below the two kids' cards) with a text search, a kid filter, a type filter (classes/reminders/both), a subject filter, and a **date range** filter (defaults to "Last 30 days" — pick "All time" to see everything). It searches across both `data/activities.jsonl` (every class ever logged) and every event in `data/reminders.jsonl`, showing each reminder's full timeline — created, reconfirmed, revised, resolved — **with the due date that was in effect at that point in time** (e.g. a `revised` event shows the new due date, not the original one). Nothing needs to be manually curated for this; it's generated straight from the same two data files described above.
+
+The default 30-day range exists because these files only ever grow (append-only) — at realistic volume (roughly a dozen lines/school day) they'll stay well under a megabyte for years, so this isn't a file-size problem, but an unbounded flat list would get tedious to scroll. If the files ever do get unwieldy, the fix is splitting by school year (e.g. `data/activities-2026.jsonl`, `data/activities-2027.jsonl`) rather than changing the format — not needed yet.

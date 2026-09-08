@@ -265,6 +265,21 @@
     display:block;
     margin-bottom:1px;
   }
+  ul.check-list li .last-seen{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:10px;
+    color:var(--ink-soft);
+    opacity:.7;
+    margin-top:2px;
+  }
+  ul.check-list li.stale{
+    opacity:.6;
+  }
+  ul.check-list li.stale .last-seen{
+    color:var(--amber);
+    opacity:1;
+    font-weight:600;
+  }
 
   .daily-grid{
     display:grid;
@@ -532,6 +547,11 @@
         <select id="historySubject">
           <option value="all">All subjects</option>
         </select>
+        <select id="historyRange">
+          <option value="30">Last 30 days</option>
+          <option value="90">Last 90 days</option>
+          <option value="all">All time</option>
+        </select>
       </div>
       <div id="historyResults"><p class="hist-empty">Loading…</p></div>
     </div>
@@ -581,7 +601,6 @@
         });
       }
       var r = map.get(ev.key);
-      r.history.push(ev);
       if(ev.event === 'revised'){
         if(ev.dueDate) r.dueDate = ev.dueDate;
         if(ev.title) r.title = ev.title;
@@ -590,6 +609,12 @@
         r.status = ev.event;
       }
       r.lastSeen = ev.seenDate;
+      // Snapshot title/dueDate as they stood right after this event, so History
+      // can show what was true at that point in time (not just the final state).
+      r.history.push({
+        event: ev.event, seenDate: ev.seenDate, note: ev.note || null,
+        title: r.title, dueDate: r.dueDate, kind: r.kind
+      });
     });
     return Array.from(map.values());
   }
@@ -613,13 +638,26 @@
     });
   }
 
+  var STALE_DAYS = 30;
+
+  function daysSince(dateStr){
+    var now = new Date();
+    var todayMid = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+    var then = new Date(dateStr + 'T00:00:00');
+    return Math.round((todayMid - then) / 86400000);
+  }
+
   function renderOngoing(reminders, kid){
     var list = reminders.filter(function(r){ return r.kind === 'ongoing' && r.status === 'active' && r.kid === kid; });
     var ul = document.getElementById('ongoing-' + kid);
     ul.innerHTML = '';
     list.forEach(function(r){
+      var age = daysSince(r.lastSeen);
+      var stale = age >= STALE_DAYS;
       var li = document.createElement('li');
-      li.innerHTML = '<input type="checkbox"><div><span class="tag">' + escapeHtml(r.subject) + '</span>' + escapeHtml(r.title) + '</div>';
+      if(stale) li.className = 'stale';
+      var lastSeenText = 'Last mentioned ' + formatDateLabel(r.lastSeen) + (stale ? ' — check this is still current' : '');
+      li.innerHTML = '<input type="checkbox"><div><span class="tag">' + escapeHtml(r.subject) + '</span>' + escapeHtml(r.title) + '<div class="last-seen">' + lastSeenText + '</div></div>';
       ul.appendChild(li);
     });
   }
@@ -647,7 +685,8 @@
     });
     reminders.forEach(function(r){
       r.history.forEach(function(ev){
-        var text = capitalize(ev.event) + ': ' + r.title + (ev.note ? ' — ' + ev.note : '');
+        var dueTag = (ev.kind === 'deadline' && ev.dueDate) ? ' (due ' + formatDateLabel(ev.dueDate) + ')' : '';
+        var text = capitalize(ev.event) + ': ' + ev.title + dueTag + (ev.note ? ' — ' + ev.note : '');
         rows.push({date: ev.seenDate, kid: r.kid, subject: r.subject, type: 'reminder', text: text});
       });
     });
@@ -670,7 +709,13 @@
     var kidSel = document.getElementById('historyKid').value;
     var subjSel = document.getElementById('historySubject').value;
     var typeSel = document.getElementById('historyType').value;
-    var rows = allHistoryRows.filter(function(r){
+    var rangeSel = document.getElementById('historyRange').value;
+
+    var withinRange = allHistoryRows;
+    if(rangeSel !== 'all'){
+      withinRange = allHistoryRows.filter(function(r){ return daysSince(r.date) <= Number(rangeSel); });
+    }
+    var rows = withinRange.filter(function(r){
       if(kidSel !== 'all' && r.kid !== kidSel) return false;
       if(subjSel !== 'all' && r.subject !== subjSel) return false;
       if(typeSel !== 'all' && r.type !== typeSel) return false;
@@ -680,10 +725,14 @@
     rows.sort(function(a,b){ return b.date.localeCompare(a.date); });
     var out = document.getElementById('historyResults');
     if(rows.length === 0){
-      out.innerHTML = '<p class="hist-empty">No matching entries.</p>';
+      out.innerHTML = '<p class="hist-empty">No matching entries' + (rangeSel !== 'all' ? ' in this range — try "All time"' : '') + '.</p>';
       return;
     }
     var html = '';
+    var hiddenByRange = allHistoryRows.length - withinRange.length;
+    if(rangeSel !== 'all' && hiddenByRange > 0){
+      html += '<p class="hist-empty">' + hiddenByRange + ' older entr' + (hiddenByRange === 1 ? 'y' : 'ies') + ' hidden — switch to "All time" to see them.</p>';
+    }
     var lastDate = null;
     rows.forEach(function(r){
       if(r.date !== lastDate){
@@ -742,6 +791,7 @@
   document.getElementById('historyKid').addEventListener('change', renderHistory);
   document.getElementById('historyType').addEventListener('change', renderHistory);
   document.getElementById('historySubject').addEventListener('change', renderHistory);
+  document.getElementById('historyRange').addEventListener('change', renderHistory);
 
   kidBtns[0].classList.add('active');
   dayBtns[0].classList.add('active');
