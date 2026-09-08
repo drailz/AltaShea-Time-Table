@@ -582,6 +582,16 @@
     return s ? s.charAt(0).toUpperCase() + s.slice(1) : s;
   }
 
+  var KID_CLASS = {altair: 'P2B', shea: 'P6'};
+
+  function whoLabel(kid, subject){
+    if(kid === 'all'){ return 'All classes' + (subject ? ' · ' + subject : ''); }
+    var parts = [capitalize(kid)];
+    if(KID_CLASS[kid]) parts.push(KID_CLASS[kid]);
+    if(subject) parts.push(subject);
+    return parts.join(' · ');
+  }
+
   function formatDateLabel(dateStr){
     var d = new Date(dateStr + 'T00:00:00');
     return d.toLocaleDateString('en-US', {weekday:'short', month:'short', day:'numeric'});
@@ -630,7 +640,7 @@
       card.dataset.kid = r.kid;
       card.dataset.date = r.dueDate;
       card.innerHTML =
-        '<span class="who">' + escapeHtml(capitalize(r.kid)) + '</span>' +
+        '<span class="who">' + escapeHtml(whoLabel(r.kid, r.subject)) + '</span>' +
         '<div class="date">' + formatDateLabel(r.dueDate) + '</div>' +
         '<span class="rel-tag"></span>' +
         '<div class="what">' + escapeHtml(r.title) + '</div>';
