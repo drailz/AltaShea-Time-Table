@@ -13,3 +13,7 @@
 {"event":"reconfirmed","key":"altair-maths-unittest2","seenDate":"2026-09-08","note":"School announcement reconfirmed Thursday, 10 Sept 2026; material uploaded to Google Classroom"}
 {"event":"revised","key":"altair-bahasa-unittest-tema2","title":"Combined Bahasa Unit Test — Tema 2 & Tema 3","dueDate":"2026-09-14","seenDate":"2026-09-08","note":"School announcement: Tema 2 and Tema 3 unit tests combined into one test, rescheduled to Mon 14 Sept 2026 (classes had gone online the last two days due to volcanic ash)"}
 {"event":"cancelled","key":"altair-bahasa-spelling-tema3","seenDate":"2026-09-08","note":"Merged into the combined Tema 2 & Tema 3 Bahasa Unit Test now scheduled for Mon 14 Sept 2026"}
+{"event":"created","key":"shea-english-spelling-test","kid":"shea","subject":"English","kind":"deadline","title":"Spelling Test","dueDate":"2026-09-17","seenDate":"2026-09-09","note":"Announced as moved/postponed to Thursday, 17 Sept 2026"}
+{"event":"created","key":"altair-science-unittest-mixing","kid":"altair","subject":"Science","kind":"deadline","title":"Unit Test — Chapter 2 \"Mixing Materials\" (materials on Google Classroom)","dueDate":"2026-09-16","seenDate":"2026-09-09"}
+{"event":"created","key":"altair-chinese-unittest","kid":"altair","subject":"Chinese","kind":"deadline","title":"Unit Test (summary attached on GC)","dueDate":"2026-09-17","seenDate":"2026-09-09"}
+{"event":"reconfirmed","key":"altair-maths-unittest2","seenDate":"2026-09-09","note":"Reconfirmed as tomorrow (Thu 10 Sept) in today's class reminder"}
