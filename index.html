@@ -112,6 +112,9 @@
     color:var(--amber);
     margin:0 0 10px;
   }
+  .deadlines h2.past-heading{
+    color:var(--ink-soft);
+  }
   .deadline-row{
     display:grid;
     grid-template-columns:repeat(auto-fit, minmax(220px,1fr));
@@ -473,6 +476,11 @@
     <div class="deadline-row" id="deadlineRow"></div>
   </div>
 
+  <div class="deadlines" id="pastDeadlinesSection" hidden>
+    <h2 class="past-heading">Recently past — unconfirmed</h2>
+    <div class="deadline-row" id="pastDeadlineRow"></div>
+  </div>
+
   <div class="kids">
 
     <div class="kid altair">
@@ -631,26 +639,38 @@
 
   var PAST_DUE_GRACE_DAYS = 3;
 
+  function buildDeadlineCard(r){
+    var card = document.createElement('div');
+    card.className = 'deadline-card';
+    card.dataset.kid = r.kid;
+    card.dataset.date = r.dueDate;
+    card.innerHTML =
+      '<span class="who">' + escapeHtml(whoLabel(r.kid, r.subject)) + '</span>' +
+      '<div class="date">' + formatDateLabel(r.dueDate) + '</div>' +
+      '<span class="rel-tag"></span>' +
+      '<div class="what">' + escapeHtml(r.title) + '</div>';
+    return card;
+  }
+
   function renderDeadlines(reminders){
-    var active = reminders.filter(function(r){
+    var all = reminders.filter(function(r){
       if(r.kind !== 'deadline' || r.status !== 'active' || !r.dueDate) return false;
       return daysSince(r.dueDate) <= PAST_DUE_GRACE_DAYS;
     });
-    active.sort(function(a,b){ return a.dueDate.localeCompare(b.dueDate); });
+    var upcoming = all.filter(function(r){ return daysSince(r.dueDate) <= 0; });
+    var past = all.filter(function(r){ return daysSince(r.dueDate) > 0; });
+    upcoming.sort(function(a,b){ return a.dueDate.localeCompare(b.dueDate); });
+    past.sort(function(a,b){ return a.dueDate.localeCompare(b.dueDate); });
+
     var container = document.getElementById('deadlineRow');
     container.innerHTML = '';
-    active.forEach(function(r){
-      var card = document.createElement('div');
-      card.className = 'deadline-card';
-      card.dataset.kid = r.kid;
-      card.dataset.date = r.dueDate;
-      card.innerHTML =
-        '<span class="who">' + escapeHtml(whoLabel(r.kid, r.subject)) + '</span>' +
-        '<div class="date">' + formatDateLabel(r.dueDate) + '</div>' +
-        '<span class="rel-tag"></span>' +
-        '<div class="what">' + escapeHtml(r.title) + '</div>';
-      container.appendChild(card);
-    });
+    upcoming.forEach(function(r){ container.appendChild(buildDeadlineCard(r)); });
+
+    var pastSection = document.getElementById('pastDeadlinesSection');
+    var pastContainer = document.getElementById('pastDeadlineRow');
+    pastContainer.innerHTML = '';
+    past.forEach(function(r){ pastContainer.appendChild(buildDeadlineCard(r)); });
+    pastSection.hidden = past.length === 0;
   }
 
   var STALE_DAYS = 30;
