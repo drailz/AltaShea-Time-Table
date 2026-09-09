@@ -629,8 +629,13 @@
     return Array.from(map.values());
   }
 
+  var PAST_DUE_GRACE_DAYS = 3;
+
   function renderDeadlines(reminders){
-    var active = reminders.filter(function(r){ return r.kind === 'deadline' && r.status === 'active' && r.dueDate; });
+    var active = reminders.filter(function(r){
+      if(r.kind !== 'deadline' || r.status !== 'active' || !r.dueDate) return false;
+      return daysSince(r.dueDate) <= PAST_DUE_GRACE_DAYS;
+    });
     active.sort(function(a,b){ return a.dueDate.localeCompare(b.dueDate); });
     var container = document.getElementById('deadlineRow');
     container.innerHTML = '';

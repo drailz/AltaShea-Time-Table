@@ -89,6 +89,10 @@ If a photo is unclear or missing a Reminders/Homework cell, just don't add a rem
 
 **School-wide announcements** (e.g. a school-level notice/email that applies to all Primary classes, not just P2B or Shea's class): append a `created` event with `"kid":"all"` and `"kind":"deadline"`. These stay visible no matter which kid filter (Both/Altair/Shea) is selected, and get a neutral dark left-accent instead of a kid color.
 
+## Past-due deadline cards
+
+A `kind:"deadline"` reminder that's never explicitly marked `resolved`/`cancelled` (because no photo ever confirmed it) doesn't stay on the "⚠ Upcoming deadlines" row forever — it's shown grayed out for **3 days** after its due date, then automatically drops off the main view. It isn't deleted: the `created`/`reconfirmed`/etc. events are still in `data/reminders.jsonl`, so it stays fully visible in the History section. This is a display-only cutoff (`PAST_DUE_GRACE_DAYS` in `index.html`), separate from actually resolving a reminder — still add a `resolved`/`cancelled` event whenever a photo confirms one, rather than relying on this timeout.
+
 ## Evaluating ongoing reminders
 
 `kind:"ongoing"` reminders (no due date) never auto-expire — they only leave the active list via an explicit `resolved`/`cancelled` event. **Don't add one of those events just because a reminder hasn't been re-mentioned in a while; only add it when a photo actually confirms it's done, cancelled, or superseded.** Silence isn't evidence — the school simply may not repeat "bring the notebook every week" in every table.
