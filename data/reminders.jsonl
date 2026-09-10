@@ -17,3 +17,11 @@
 {"event":"created","key":"altair-science-unittest-mixing","kid":"altair","subject":"Science","kind":"deadline","title":"Unit Test — Chapter 2 \"Mixing Materials\" (materials on Google Classroom)","dueDate":"2026-09-16","seenDate":"2026-09-09"}
 {"event":"created","key":"altair-chinese-unittest","kid":"altair","subject":"Chinese","kind":"deadline","title":"Unit Test (summary attached on GC)","dueDate":"2026-09-17","seenDate":"2026-09-09"}
 {"event":"reconfirmed","key":"altair-maths-unittest2","seenDate":"2026-09-09","note":"Reconfirmed as tomorrow (Thu 10 Sept) in today's class reminder"}
+{"event":"reconfirmed","key":"altair-chinese-unittest","seenDate":"2026-09-10"}
+{"event":"resolved","key":"altair-maths-unittest2","seenDate":"2026-09-10","note":"Test held today per class note (\"Unit Test 2 and start with chapter 3...\")"}
+{"event":"created","key":"altair-maths-ruler","kid":"altair","subject":"Maths","kind":"ongoing","title":"Bring a ruler to every Maths lesson","seenDate":"2026-09-10"}
+{"event":"reconfirmed","key":"shea-english-spelling-test","seenDate":"2026-09-10"}
+{"event":"reconfirmed","key":"shea-english-drama-script-assignment","seenDate":"2026-09-10","note":"Reconfirmed as due tomorrow, Sep 11"}
+{"event":"created","key":"shea-science-workbook-149-150","kid":"shea","subject":"Science","kind":"ongoing","title":"Do numbers 4.3 and 4.4 on pages 149–150 in the Science Learner Book","seenDate":"2026-09-10"}
+{"event":"revised","key":"shea-bahasa-spelling-tema3","dueDate":"2026-09-14","seenDate":"2026-09-10","note":"Rescheduled from Sep 7 to Monday, 14 Sept 2026"}
+{"event":"created","key":"shea-bahasa-unittest-tema3","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Unit Test — Tema 3","dueDate":"2026-09-15","seenDate":"2026-09-10"}
