@@ -30,3 +30,12 @@
 {"event":"reconfirmed","key":"shea-english-spelling-test","seenDate":"2026-09-11"}
 {"event":"resolved","key":"shea-english-drama-script-assignment","seenDate":"2026-09-11","note":"Due today; today's update replaced the submission reminder with the next milestone (Spoken Drama Performance, Sep 15)"}
 {"event":"created","key":"shea-english-drama-performance","kid":"shea","subject":"English","kind":"deadline","title":"Spoken Drama Performance","dueDate":"2026-09-15","seenDate":"2026-09-11"}
+{"event":"revised","key":"altair-bahasa-unittest-tema2","dueDate":"2026-09-15","seenDate":"2026-09-14","note":"Today's reminder confirms the combined Tema 2 & 3 Unit Test is Tuesday, 15 Sept (moved one day from Mon 14 Sept)"}
+{"event":"reconfirmed","key":"altair-maths-ruler","seenDate":"2026-09-14"}
+{"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-09-14","note":"Reconfirmed as tomorrow (Tuesday)"}
+{"event":"reconfirmed","key":"altair-science-unittest-mixing","seenDate":"2026-09-14"}
+{"event":"resolved","key":"shea-bahasa-spelling-tema3","seenDate":"2026-09-14","note":"Test held today per class log"}
+{"event":"revised","key":"shea-bahasa-unittest-tema3","title":"Combined Bahasa Unit Test — Tema 2 & Tema 3","dueDate":"2026-09-15","seenDate":"2026-09-14","note":"Today's reminder explicitly combines Tema 2 and Tema 3 into this Tue 15 Sept test"}
+{"event":"cancelled","key":"shea-bahasa-unittest-tema2","seenDate":"2026-09-14","note":"Merged into the combined Tema 2 & 3 Unit Test on Tue 15 Sept, confirmed by today's reminder"}
+{"event":"reconfirmed","key":"shea-english-spelling-test","seenDate":"2026-09-14"}
+{"event":"reconfirmed","key":"shea-english-drama-performance","seenDate":"2026-09-14","note":"Reminder now asks to print physical copies of the script for tomorrow's performance"}
