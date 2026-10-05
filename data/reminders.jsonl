@@ -53,3 +53,9 @@
 {"event":"reconfirmed","key":"altair-maths-ruler","seenDate":"2026-09-17"}
 {"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-09-17"}
 {"event":"resolved","key":"shea-english-spelling-test","seenDate":"2026-09-17","note":"Spelling test held today per class log"}
+{"event":"created","key":"altair-english-public-speaking","kid":"altair","subject":"English","kind":"deadline","title":"Complete the Public Speaking activity posted on Google Classroom to prepare for your presentation on Friday, 9 October","dueDate":"2026-10-09","seenDate":"2026-10-05"}
+{"event":"created","key":"altair-english-print-work","kid":"altair","subject":"English","kind":"deadline","title":"Print your completed work and bring it to school on Wednesday, 7 October","dueDate":"2026-10-07","seenDate":"2026-10-05"}
+{"event":"created","key":"altair-english-unittest2","kid":"altair","subject":"English","kind":"deadline","title":"English Unit Test 2 (check Google Classroom for review materials; classwork answer keys will be posted within the week)","dueDate":"2026-10-13","seenDate":"2026-10-05"}
+{"event":"created","key":"altair-bahasa-spelling-tema4","kid":"altair","subject":"Bahasa","kind":"deadline","title":"Spelling test","dueDate":"2026-10-12","seenDate":"2026-10-05"}
+{"event":"created","key":"shea-bahasa-spelling-tema4","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Spelling test","dueDate":"2026-10-12","seenDate":"2026-10-05"}
+{"event":"created","key":"shea-english-spelling-resume","kid":"shea","subject":"English","kind":"ongoing","title":"English spelling test will resume next week","seenDate":"2026-10-05"}
