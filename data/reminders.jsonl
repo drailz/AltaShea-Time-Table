@@ -59,3 +59,7 @@
 {"event":"created","key":"altair-bahasa-spelling-tema4","kid":"altair","subject":"Bahasa","kind":"deadline","title":"Spelling test","dueDate":"2026-10-12","seenDate":"2026-10-05"}
 {"event":"created","key":"shea-bahasa-spelling-tema4","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Spelling test","dueDate":"2026-10-12","seenDate":"2026-10-05"}
 {"event":"created","key":"shea-english-spelling-resume","kid":"shea","subject":"English","kind":"ongoing","title":"English spelling test will resume next week","seenDate":"2026-10-05"}
+{"event":"reconfirmed","key":"altair-english-public-speaking","seenDate":"2026-10-06","note":"Reminder says to bring the completed Public Speaking activity to school tomorrow (Wed 7 Oct)"}
+{"event":"reconfirmed","key":"altair-english-print-work","seenDate":"2026-10-06"}
+{"event":"reconfirmed","key":"altair-bahasa-spelling-tema4","seenDate":"2026-10-06"}
+{"event":"reconfirmed","key":"shea-bahasa-spelling-tema4","seenDate":"2026-10-06"}
