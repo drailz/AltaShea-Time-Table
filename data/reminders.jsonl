@@ -66,3 +66,12 @@
 {"event":"created","key":"altair-maths-unittest3","kid":"altair","subject":"Maths","kind":"deadline","title":"Maths Unit Test 3 (material will be uploaded on Google Classroom)","dueDate":"2026-10-14","seenDate":"2026-10-07"}
 {"event":"reconfirmed","key":"altair-maths-unittest3","seenDate":"2026-10-08"}
 {"event":"created","key":"shea-science-unittest2","kid":"shea","subject":"Science","kind":"deadline","title":"Science Unit Test 2 (announcement, materials and review questions will be given in Google Classroom)","dueDate":"2026-10-15","seenDate":"2026-10-08"}
+{"event":"resolved","key":"altair-bahasa-spelling-tema4","seenDate":"2026-10-12","note":"Spelling Test Tema 4 held today per class log"}
+{"event":"resolved","key":"shea-bahasa-spelling-tema4","seenDate":"2026-10-12","note":"Spelling Test Tema 4 held today per class log"}
+{"event":"created","key":"altair-english-my-own-legend","kid":"altair","subject":"English","kind":"deadline","title":"Primary 2 English Semester Assignment, \"My Own Legend\" — uploaded to Google Classroom; submit the completed work","dueDate":"2026-10-26","seenDate":"2026-10-12"}
+{"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-10-12","note":"Tomorrow (Tue 13 Oct) is Mental Sum about Division"}
+{"event":"created","key":"altair-bahasa-unittest-tema4","kid":"altair","subject":"Bahasa","kind":"deadline","title":"Unit Test — Tema 4","dueDate":"2026-10-19","seenDate":"2026-10-12"}
+{"event":"created","key":"shea-bahasa-unittest-tema4","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Unit Test — Tema 4","dueDate":"2026-10-19","seenDate":"2026-10-12"}
+{"event":"resolved","key":"shea-english-spelling-resume","seenDate":"2026-10-12","note":"Superseded by dated English spelling test on Thu 15 Oct"}
+{"event":"created","key":"shea-english-spelling-test-oct15","kid":"shea","subject":"English","kind":"deadline","title":"English Spelling Test","dueDate":"2026-10-15","seenDate":"2026-10-12"}
+{"event":"created","key":"all-un-diwali-spirit-week","kid":"all","subject":"School","kind":"deadline","title":"UN, Diwali & Spirit Week, 19–23 Oct (theme \"One World, Many Lights\"). Daily dress-up in country flag colours: Mon 19 Asia, Tue 20 Europe, Wed 21 Africa, Thu 22 Americas, Fri 23 House colour (no special outfits needed). Main celebration Fri 23 Oct, 07:30–12:00: Diwali presentation, country parade, House Games, international food sharing in class (Form Teachers will share food details)","dueDate":"2026-10-19","seenDate":"2026-10-12"}
