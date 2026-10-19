@@ -82,3 +82,8 @@
 {"event":"reconfirmed","key":"shea-science-unittest2","seenDate":"2026-10-13","note":"Materials and review questions already shared on Google Classroom"}
 {"event":"reconfirmed","key":"shea-english-spelling-test-oct15","seenDate":"2026-10-13"}
 {"event":"reconfirmed","key":"shea-bahasa-unittest-tema4","seenDate":"2026-10-13"}
+{"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-10-19","note":"Tomorrow (Tue 20 Oct) is mental sum about multiplication table of 2"}
+{"event":"resolved","key":"altair-bahasa-unittest-tema4","seenDate":"2026-10-19","note":"Unit Test Tema 4 done today per class log"}
+{"event":"created","key":"altair-bahasa-spelling-tema5","kid":"altair","subject":"Bahasa","kind":"deadline","title":"Spelling test — Tema 5","dueDate":"2026-10-26","seenDate":"2026-10-19"}
+{"event":"revised","key":"shea-bahasa-unittest-tema4","dueDate":"2026-10-20","seenDate":"2026-10-19","note":"Rescheduled to Tuesday, 20 October 2026"}
+{"event":"revised","key":"shea-english-spelling-test-oct15","dueDate":"2026-10-22","seenDate":"2026-10-19","note":"Reminder now says English spelling test is Thursday, 22 October 2026"}
