@@ -87,3 +87,5 @@
 {"event":"created","key":"altair-bahasa-spelling-tema5","kid":"altair","subject":"Bahasa","kind":"deadline","title":"Spelling test — Tema 5","dueDate":"2026-10-26","seenDate":"2026-10-19"}
 {"event":"revised","key":"shea-bahasa-unittest-tema4","dueDate":"2026-10-20","seenDate":"2026-10-19","note":"Rescheduled to Tuesday, 20 October 2026"}
 {"event":"revised","key":"shea-english-spelling-test-oct15","dueDate":"2026-10-22","seenDate":"2026-10-19","note":"Reminder now says English spelling test is Thursday, 22 October 2026"}
+{"event":"reconfirmed","key":"shea-english-spelling-test-oct15","seenDate":"2026-10-20"}
+{"event":"created","key":"shea-science-learnerbook-p30","kid":"shea","subject":"Science","kind":"deadline","title":"Do Learner's Book page 30, numbers 1 to 7 (to be discussed in class on Thursday)","dueDate":"2026-10-22","seenDate":"2026-10-20"}
