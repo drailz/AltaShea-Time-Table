@@ -89,3 +89,5 @@
 {"event":"revised","key":"shea-english-spelling-test-oct15","dueDate":"2026-10-22","seenDate":"2026-10-19","note":"Reminder now says English spelling test is Thursday, 22 October 2026"}
 {"event":"reconfirmed","key":"shea-english-spelling-test-oct15","seenDate":"2026-10-20"}
 {"event":"created","key":"shea-science-learnerbook-p30","kid":"shea","subject":"Science","kind":"deadline","title":"Do Learner's Book page 30, numbers 1 to 7 (to be discussed in class on Thursday)","dueDate":"2026-10-22","seenDate":"2026-10-20"}
+{"event":"created","key":"altair-science-unittest-light-shadows","kid":"altair","subject":"Science","kind":"deadline","title":"Science Unit Test on Chapter 3 \"Light and Shadows\" (review materials uploaded to Google Classroom)","dueDate":"2026-10-28","seenDate":"2026-10-21"}
+{"event":"reconfirmed","key":"shea-english-spelling-test-oct15","seenDate":"2026-10-21","note":"Spelling test is tomorrow, Thu 22 Oct"}
