@@ -94,3 +94,6 @@
 {"event":"cancelled","key":"altair-ppkn-empathylog","seenDate":"2026-10-22","note":"Removed at parent's request"}
 {"event":"cancelled","key":"shea-science-workbook","seenDate":"2026-10-22","note":"Removed at parent's request"}
 {"event":"cancelled","key":"shea-science-workbook-149-150","seenDate":"2026-10-22","note":"Removed at parent's request"}
+{"event":"resolved","key":"shea-english-spelling-test-oct15","seenDate":"2026-10-22","note":"Spelling test held today per class log"}
+{"event":"created","key":"shea-science-learnerbook-p43-44","kid":"shea","subject":"Science","kind":"ongoing","title":"Do Learner's Book pages 43–44, numbers 1 to 7 (may answer in the notebook)","seenDate":"2026-10-22"}
+{"event":"created","key":"shea-bahasa-spelling-tema5","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Spelling test — Tema 5","dueDate":"2026-10-26","seenDate":"2026-10-22"}
