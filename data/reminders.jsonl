@@ -97,3 +97,9 @@
 {"event":"resolved","key":"shea-english-spelling-test-oct15","seenDate":"2026-10-22","note":"Spelling test held today per class log"}
 {"event":"created","key":"shea-science-learnerbook-p43-44","kid":"shea","subject":"Science","kind":"ongoing","title":"Do Learner's Book pages 43–44, numbers 1 to 7 (may answer in the notebook)","seenDate":"2026-10-22"}
 {"event":"created","key":"shea-bahasa-spelling-tema5","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Spelling test — Tema 5","dueDate":"2026-10-26","seenDate":"2026-10-22"}
+{"event":"resolved","key":"altair-bahasa-spelling-tema5","seenDate":"2026-10-26","note":"Spelling Test Tema 5 done today per class log"}
+{"event":"created","key":"altair-bahasa-unittest-tema5","kid":"altair","subject":"Bahasa","kind":"deadline","title":"Unit Test — Tema 5","dueDate":"2026-11-02","seenDate":"2026-10-26"}
+{"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-10-26","note":"Tomorrow (Tue 27 Oct) mental sum is about multiplication table of 5"}
+{"event":"created","key":"shea-english-semester-assignment","kid":"shea","subject":"English","kind":"ongoing","title":"No English spelling test this week — focus on the Semester Assignment (details posted in Google Classroom)","seenDate":"2026-10-26"}
+{"event":"revised","key":"shea-bahasa-spelling-tema5","dueDate":"2026-10-27","seenDate":"2026-10-26","note":"Spelling Test Tema 5 is Tuesday, 27 October 2026"}
+{"event":"created","key":"shea-bahasa-unittest-tema5","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Unit Test — Tema 5","dueDate":"2026-11-02","seenDate":"2026-10-26"}
