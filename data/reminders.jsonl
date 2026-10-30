@@ -112,3 +112,5 @@
 {"event":"resolved","key":"altair-science-unittest-light-shadows","seenDate":"2026-10-28","note":"Science Unit Test held today per class log"}
 {"event":"reconfirmed","key":"altair-bring-green-ink-pen","seenDate":"2026-10-28"}
 {"event":"created","key":"shea-maths-mentalmaths-oct29","kid":"shea","subject":"Maths","kind":"deadline","title":"Mental Maths","dueDate":"2026-10-29","seenDate":"2026-10-28"}
+{"event":"resolved","key":"shea-maths-mentalmaths-oct29","seenDate":"2026-10-29","note":"Mental Maths held today per class log"}
+{"event":"created","key":"shea-science-read-unit-2-7","kid":"shea","subject":"Science","kind":"ongoing","title":"Read Unit 2.7 Compounds and mixtures","seenDate":"2026-10-29"}
