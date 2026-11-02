@@ -115,3 +115,6 @@
 {"event":"resolved","key":"shea-maths-mentalmaths-oct29","seenDate":"2026-10-29","note":"Mental Maths held today per class log"}
 {"event":"created","key":"shea-science-read-unit-2-7","kid":"shea","subject":"Science","kind":"ongoing","title":"Read Unit 2.7 Compounds and mixtures","seenDate":"2026-10-29"}
 {"event":"resolved","key":"shea-science-learnerbook-p43-44-submit","seenDate":"2026-10-30","note":"Confirmed done by parent"}
+{"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-11-02","note":"No mental sum tomorrow (Tue 3 Nov)"}
+{"event":"created","key":"altair-science-semester-assignment1","kid":"altair","subject":"Science","kind":"deadline","title":"Submission deadline for Science Semester Assignment 1 — submit on time; late submissions will be subject to mark deductions","dueDate":"2026-11-09","seenDate":"2026-11-02"}
+{"event":"reconfirmed","key":"shea-english-semester-assignment","seenDate":"2026-11-02","note":"No English spelling test this week"}
