@@ -118,3 +118,6 @@
 {"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-11-02","note":"No mental sum tomorrow (Tue 3 Nov)"}
 {"event":"created","key":"altair-science-semester-assignment1","kid":"altair","subject":"Science","kind":"deadline","title":"Submission deadline for Science Semester Assignment 1 — submit on time; late submissions will be subject to mark deductions","dueDate":"2026-11-09","seenDate":"2026-11-02"}
 {"event":"reconfirmed","key":"shea-english-semester-assignment","seenDate":"2026-11-02","note":"No English spelling test this week"}
+{"event":"created","key":"shea-science-read-unit-2-4-5-3","kid":"shea","subject":"Science","kind":"ongoing","title":"Read Unit 2.4 and Unit 5.1–5.3 of the Learner's Book","seenDate":"2026-11-03"}
+{"event":"created","key":"shea-english-sa1-pointers","kid":"shea","subject":"English","kind":"ongoing","title":"Semester Assessment 1 pointers have been posted in Google Classroom — go through them and prepare accordingly","seenDate":"2026-11-03"}
+{"event":"created","key":"shea-english-unittest-nov11","kid":"shea","subject":"English","kind":"deadline","title":"English Unit Test (details posted in Google Classroom)","dueDate":"2026-11-11","seenDate":"2026-11-03"}
