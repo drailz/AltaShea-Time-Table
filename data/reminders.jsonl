@@ -123,3 +123,9 @@
 {"event":"created","key":"shea-english-unittest-nov11","kid":"shea","subject":"English","kind":"deadline","title":"English Unit Test (details posted in Google Classroom)","dueDate":"2026-11-11","seenDate":"2026-11-03"}
 {"event":"created","key":"altair-maths-notebook","kid":"altair","subject":"Maths","kind":"ongoing","title":"Check the maths notebook — please bring a new maths notebook if it is already full","seenDate":"2026-11-04"}
 {"event":"reconfirmed","key":"shea-english-unittest-nov11","seenDate":"2026-11-05","note":"Unit Test next week, Wed 11 Nov; details posted in Google Classroom"}
+{"event":"resolved","key":"altair-science-semester-assignment1","seenDate":"2026-11-09","note":"Semester assignment presentation held today per class log"}
+{"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-11-09","note":"Tomorrow (Tue 10 Nov) mental sum is about multiplication table of 10"}
+{"event":"created","key":"altair-bahasa-spelling-tema6","kid":"altair","subject":"Bahasa","kind":"deadline","title":"Spelling test — Tema 6","dueDate":"2026-11-10","seenDate":"2026-11-09"}
+{"event":"reconfirmed","key":"shea-english-unittest-nov11","seenDate":"2026-11-09"}
+{"event":"created","key":"shea-english-spelling-test-nov12","kid":"shea","subject":"English","kind":"deadline","title":"English Spelling Test","dueDate":"2026-11-12","seenDate":"2026-11-09"}
+{"event":"created","key":"shea-english-semester-assignment-nov20","kid":"shea","subject":"English","kind":"deadline","title":"English Semester Assignment due","dueDate":"2026-11-20","seenDate":"2026-11-09"}
