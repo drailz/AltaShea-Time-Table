@@ -129,3 +129,14 @@
 {"event":"reconfirmed","key":"shea-english-unittest-nov11","seenDate":"2026-11-09"}
 {"event":"created","key":"shea-english-spelling-test-nov12","kid":"shea","subject":"English","kind":"deadline","title":"English Spelling Test","dueDate":"2026-11-12","seenDate":"2026-11-09"}
 {"event":"created","key":"shea-english-semester-assignment-nov20","kid":"shea","subject":"English","kind":"deadline","title":"English Semester Assignment due","dueDate":"2026-11-20","seenDate":"2026-11-09"}
+{"event":"resolved","key":"altair-bahasa-spelling-tema6","seenDate":"2026-11-10","note":"Spelling Test Tema 6 held today per class log"}
+{"event":"created","key":"altair-english-unittest4","kid":"altair","subject":"English","kind":"deadline","title":"English Unit Test 4 (check Google Classroom for review materials and help your child prepare)","dueDate":"2026-11-17","seenDate":"2026-11-10"}
+{"event":"created","key":"altair-maths-semester-assignment","kid":"altair","subject":"Maths","kind":"deadline","title":"Maths Semester Assignment deadline","dueDate":"2026-11-13","seenDate":"2026-11-10"}
+{"event":"resolved","key":"altair-bahasa-unittest-tema5","seenDate":"2026-11-10","note":"Superseded by combined Unit Test Tema 5 & 6 next week"}
+{"event":"created","key":"altair-bahasa-unittest-tema5-6","kid":"altair","subject":"Bahasa","kind":"ongoing","title":"Unit Test Tema 5 & 6 next week (exact date not yet given)","seenDate":"2026-11-10"}
+{"event":"resolved","key":"shea-bahasa-unittest-tema5","seenDate":"2026-11-10","note":"Superseded by combined Unit Test Tema 5 & 6 next week"}
+{"event":"created","key":"shea-bahasa-unittest-tema5-6","kid":"shea","subject":"Bahasa","kind":"ongoing","title":"Unit Test Tema 5 & 6 next week (exact date not yet given)","seenDate":"2026-11-10"}
+{"event":"created","key":"shea-science-unittest3","kid":"shea","subject":"Science","kind":"deadline","title":"Science Unit Test 3 (materials and practice questions already shared on Buzz); read Unit 5.3 Metal Mixture (Alloy)","dueDate":"2026-11-12","seenDate":"2026-11-10"}
+{"event":"reconfirmed","key":"shea-english-unittest-nov11","seenDate":"2026-11-10","note":"Unit Test is tomorrow, Wed 11 Nov"}
+{"event":"reconfirmed","key":"shea-english-spelling-test-nov12","seenDate":"2026-11-10"}
+{"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-10"}
