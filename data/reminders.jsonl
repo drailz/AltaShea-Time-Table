@@ -140,3 +140,7 @@
 {"event":"reconfirmed","key":"shea-english-unittest-nov11","seenDate":"2026-11-10","note":"Unit Test is tomorrow, Wed 11 Nov"}
 {"event":"reconfirmed","key":"shea-english-spelling-test-nov12","seenDate":"2026-11-10"}
 {"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-10"}
+{"event":"created","key":"altair-maths-sa-upload-present","kid":"altair","subject":"Maths","kind":"deadline","title":"Take a photo of the Semester Assignment (SA) and upload it in Google Classroom; students will present their SA on Monday, 16 November","dueDate":"2026-11-16","seenDate":"2026-11-11"}
+{"event":"resolved","key":"shea-english-unittest-nov11","seenDate":"2026-11-11","note":"English Unit Test held today per class log"}
+{"event":"reconfirmed","key":"shea-english-spelling-test-nov12","seenDate":"2026-11-11","note":"Spelling test is tomorrow, Thu 12 Nov"}
+{"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-11"}
