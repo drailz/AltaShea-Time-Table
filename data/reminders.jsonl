@@ -144,3 +144,10 @@
 {"event":"resolved","key":"shea-english-unittest-nov11","seenDate":"2026-11-11","note":"English Unit Test held today per class log"}
 {"event":"reconfirmed","key":"shea-english-spelling-test-nov12","seenDate":"2026-11-11","note":"Spelling test is tomorrow, Thu 12 Nov"}
 {"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-11"}
+{"event":"reconfirmed","key":"altair-maths-notebook","seenDate":"2026-11-12","note":"Please bring a new maths notebook if it's already full"}
+{"event":"resolved","key":"shea-science-unittest3","seenDate":"2026-11-12","note":"Science Unit Test 3 held today per class log"}
+{"event":"resolved","key":"shea-english-spelling-test-nov12","seenDate":"2026-11-12","note":"Spelling test held today per class log"}
+{"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-12"}
+{"event":"created","key":"shea-science-semester-assignment-nov20","kid":"shea","subject":"Science","kind":"deadline","title":"Science Semester Assignment deadline","dueDate":"2026-11-20","seenDate":"2026-11-12"}
+{"event":"created","key":"shea-sa-practice-papers","kid":"shea","subject":"Science","kind":"ongoing","title":"Semester Assessment practice papers (Science and English) have been uploaded in Google Classroom — study and prepare in advance","seenDate":"2026-11-12"}
+{"event":"created","key":"shea-it-dream-house-deadline","kid":"shea","subject":"IT","kind":"deadline","title":"Deadline of the Dream House Project (TinkerCad)","dueDate":"2026-11-19","seenDate":"2026-11-12"}
