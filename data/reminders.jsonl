@@ -163,3 +163,5 @@
 {"event":"resolved","key":"altair-english-unittest4","seenDate":"2026-11-17","note":"English Unit Test held today per class log"}
 {"event":"reconfirmed","key":"shea-science-semester-assignment-nov20","seenDate":"2026-11-17","note":"Deadline for submission of Semester Assignment: Fri 20 Nov"}
 {"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-17"}
+{"event":"created","key":"altair-chinese-unittest-nov25","kid":"altair","subject":"Chinese","kind":"deadline","title":"Chinese Unit Test (material attached on Google Classroom)","dueDate":"2026-11-25","seenDate":"2026-11-18"}
+{"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-18"}
