@@ -166,3 +166,7 @@
 {"event":"created","key":"altair-chinese-unittest-nov25","kid":"altair","subject":"Chinese","kind":"deadline","title":"Chinese Unit Test (material attached on Google Classroom)","dueDate":"2026-11-25","seenDate":"2026-11-18"}
 {"event":"reconfirmed","key":"shea-english-semester-assignment-nov20","seenDate":"2026-11-18"}
 {"event":"revised","key":"altair-chinese-unittest-nov25","title":"Chinese Unit Test 2 (summary provided for students' reference)","dueDate":"2026-11-25","seenDate":"2026-11-18","note":"Additional notice confirming Chinese Unit Test 2 on Wednesday, 25 Nov 2026, with summary attached"}
+{"event":"resolved","key":"altair-english-spelling6","seenDate":"2026-11-19","note":"Spelling test held today per class log"}
+{"event":"resolved","key":"altair-maths-sa-upload-present","seenDate":"2026-11-19","note":"Semester Assignment poster presented today per class log"}
+{"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-11-19","note":"Mental sum next week is about addition and subtraction of 3-4 digits with and without renaming"}
+{"event":"reconfirmed","key":"altair-chinese-unittest-nov25","seenDate":"2026-11-19","note":"Material attached on Google Classroom"}
