@@ -170,3 +170,10 @@
 {"event":"resolved","key":"altair-maths-sa-upload-present","seenDate":"2026-11-19","note":"Semester Assignment poster presented today per class log"}
 {"event":"reconfirmed","key":"altair-maths-mentalsum","seenDate":"2026-11-19","note":"Mental sum next week is about addition and subtraction of 3-4 digits with and without renaming"}
 {"event":"reconfirmed","key":"altair-chinese-unittest-nov25","seenDate":"2026-11-19","note":"Material attached on Google Classroom"}
+{"event":"created","key":"shea-sa1-english","kid":"shea","subject":"English","kind":"deadline","title":"Semester Assessment 1 — English, Paper 1 (08:00–09:10) and Paper 2 (09:25–10:35)","dueDate":"2026-11-23","seenDate":"2026-11-23"}
+{"event":"created","key":"shea-sa1-maths","kid":"shea","subject":"Maths","kind":"deadline","title":"Semester Assessment 1 — Maths, Paper 1 (08:00–09:00) and Paper 2 (09:15–10:15)","dueDate":"2026-11-24","seenDate":"2026-11-23"}
+{"event":"created","key":"shea-sa1-science","kid":"shea","subject":"Science","kind":"deadline","title":"Semester Assessment 1 — Science, 08:00–09:00","dueDate":"2026-11-25","seenDate":"2026-11-23"}
+{"event":"created","key":"shea-sa1-bahasa","kid":"shea","subject":"Bahasa","kind":"deadline","title":"Semester Assessment 1 — Bahasa Indonesia, 08:00–09:30","dueDate":"2026-11-26","seenDate":"2026-11-23"}
+{"event":"created","key":"shea-sa1-chinese","kid":"shea","subject":"CL","kind":"deadline","title":"Semester Assessment 1 — Chinese, 08:00–09:00","dueDate":"2026-11-27","seenDate":"2026-11-23"}
+{"event":"created","key":"shea-sa1-revision-days","kid":"shea","subject":"School","kind":"deadline","title":"Revision Days, Mon–Wed 30 Nov – 2 Dec (half-day school)","dueDate":"2026-11-30","seenDate":"2026-11-23"}
+{"event":"created","key":"shea-sa1-logistics","kid":"shea","subject":"School","kind":"ongoing","title":"SA Week (23–27 Nov): no regular classes or Homeroom. Arrive 7:30–7:50 am; students go home after their last test of the day — please pick up promptly","seenDate":"2026-11-23"}
